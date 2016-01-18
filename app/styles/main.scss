@@ -1,4 +1,5 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$grid-gutter-width: 0px;
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -27,6 +28,16 @@ body {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 
+    .navbar-inverse{
+          background-image: -webkit-linear-gradient(top, #3c3c3c 0, #222 100%);
+          background-image: -o-linear-gradient(top, #3c3c3c 0, #222 100%);
+          background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #3c3c3c), to(#222));
+          background-image: linear-gradient(to bottom, #3c3c3c 0, #222 100%);
+          background-repeat: repeat-x;
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+          filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+          border-radius: 4px;
+    }
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
@@ -47,31 +58,19 @@ body {
   margin: 30px 0;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
+.business-tech-blog{
+    h1{
+        text-align: center;
+        color: #337ab7;
+        margin: 30px 0;
+    }
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
+/*  .container {
     max-width: 730px;
-  }
+  }*/
 
   /* Remove the padding we set earlier */
   .header,
@@ -82,7 +81,7 @@ body {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 51px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
