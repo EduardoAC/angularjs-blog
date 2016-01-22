@@ -15,6 +15,32 @@ body {
   padding: 0;
 }
 
+.entry-date-section > p{
+    padding: 10px 15px;
+    background-color: #FFF;
+    border: 2px solid #EEE;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: Raleway,sans-serif;
+    display: block;
+    width: 180px;
+    text-align: center;
+    margin: 10px auto;
+}
+.righArea{
+    border-left: dashed 1px #897f8a;
+    padding-bottom: 47px;
+}
+.righArea .post{
+    display: block;
+    padding-left: 75px; 
+}
+.leftArea .post{
+    display: block;
+    padding-right: 75px;    
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
