@@ -4,6 +4,13 @@ $grid-gutter-width: 0px;
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "_blog-post.scss";
+.container-fluid{ 
+    margin-top: 51px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -14,33 +21,32 @@ $grid-gutter-width: 0px;
 body {
   padding: 0;
 }
-
+.entry-date-section{
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: Raleway,sans-serif;
+    text-align: center;
+    letter-spacing: 1px;
+}
 .entry-date-section > p{
     padding: 10px 15px;
     background-color: #FFF;
-    border: 2px solid #EEE;
-    font-size: 18px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-family: Raleway,sans-serif;
+    border: 2px solid #DDD;
+    display: block;
+    width: 180px;
+    margin: 50px auto 50px auto;
+}
+.entry-date-section > button{
+    padding: 10px 15px;
+    background-color: #EEE;
+    border: 2px solid #CCC;
     display: block;
     width: 180px;
     text-align: center;
-    margin: 10px auto;
+    margin: 10px auto 50px auto;
 }
-.righArea{
-    border-left: dashed 1px #897f8a;
-    padding-bottom: 47px;
-}
-.righArea .post{
-    display: block;
-    padding-left: 75px; 
-}
-.leftArea .post{
-    display: block;
-    padding-right: 75px;    
-}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -93,24 +99,36 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-/*  .container {
-    max-width: 730px;
-  }*/
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 51px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+@media screen and (min-width: $screen-md-min) {
+    .entry-date-section > p,.entry-date-section > button{
+        margin: 10px auto;
+    }
+    .leftArea{
+        border-right: dashed 1px #897f8a; 
+        padding-bottom: 47px;
+    }
+    /* Add padding to allow vertical timeline with arrows*/
+    .rightArea .post{
+        display: block;
+        padding-left: 75px; 
+    }
+    .leftArea .post{
+        display: block;
+        padding-right: 75px;    
+    }
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+      margin-bottom: 51px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+      border-bottom: 0;
+    }
 }

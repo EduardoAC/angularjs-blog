@@ -9,13 +9,14 @@
         </div>
         <div class="row">
             <div class="col-md-6 leftArea">
-                <post></post>
+                <post ng-repeat="postInfo in oddPostList"></post>
             </div>
-            <div class="col-md-6 righArea">
-                <post></post>
-                <post></post>
-                <post></post>
+            <div class="col-md-6 rightArea">
+                <post ng-repeat="postInfo in evenPostList"></post>
             </div>
+        </div>
+        <div class="entry-date-section">
+            <button>LOAD MORE</button>
         </div>
     </section>
  </article>
