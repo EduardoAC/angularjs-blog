@@ -1,38 +1,22 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
-
-<div class="row">
-    <ul>
-    <li class="dropdown">
-      <a class="dropdown-toggle">
-        Click me to see some awesome things!
-      </a>
-      <ul class="dropdown-menu">
-        <li ng-repeat="thing in awesomeThings">
-          <a>{{thing}}</a>
-        </li>
-      </ul>
-    </li>
-  </ul>
-</div>
+<article class="container business-tech-blog">
+    <section class="introduction">
+      <h1>Business And Technology blog</h1>
+      <p>Our Latest Business and Technology News in a Timeline</p>  
+    </section>
+    <section class="post-tilemline">
+        <div class="entry-date-section">
+            <p>{{date | date:'MMMM yyyy'}}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 leftArea">
+                <post ng-repeat="postInfo in oddPostList"></post>
+            </div>
+            <div class="col-md-6 rightArea">
+                <post ng-repeat="postInfo in evenPostList"></post>
+            </div>
+        </div>
+        <div class="entry-date-section">
+            <button>LOAD MORE</button>
+        </div>
+    </section>
+ </article>

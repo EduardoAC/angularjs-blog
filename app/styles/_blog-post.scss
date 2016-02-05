@@ -1,0 +1,108 @@
+/* 
+    Created on : 22-ene-2016, 19:01:06
+    Author     : EduardoAC <Eduardo Aparicio Cardenes>
+*/
+.post{
+    display: block;
+    font-family: Raleway,sans-serif;
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #DDD;
+    
+    .post-image > a > img{
+        margin: 0 auto;
+    }
+    .post-title{
+        margin: 10px 0;
+        font-size: 20px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 1.5;
+        letter-spacing: 1px;
+    }
+    .post-meta{
+        list-style: none;
+        -webkit-padding-start: 0px;
+        
+        li{
+            float: left;
+            margin: 0 10px;
+        }
+    }
+    .post-content{
+        margin-top: 30px;
+        line-height: 1.8;
+        
+        p{
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: justify;
+        }
+        .more-link{
+            border-bottom-color: #1ABC9C;
+            display: inline-block;
+            border-bottom: 1px solid #1ABC9C;
+            padding: 0 2px;
+            font-family: 'Crete Round',serif;
+            font-style: italic;
+            text-decoration: none;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+    }
+}
+@media (min-width: $screen-md-min){ 
+    .post{
+        position: relative;
+        padding-bottom: 0px;
+        border-bottom: 0px;
+    }
+    .post:hover{
+        .post-arrow,.timeline-divider{
+            border-color: #1ABC9C;
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+        }
+    }
+    .post-arrow{
+        position: absolute;
+        border: 2px solid #483c49;
+        background-color: #FFF;
+        top: 100px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        font-size: 26px;
+        font-weight: 700;
+        color: #AAA;
+        text-align: center;
+        line-height: 1;
+        .timeline-divider{
+            position: absolute;
+            top: 4px;
+            width: 75px;
+            height: 0;
+            border-top: 1px dashed #897f8a;
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            font-size: 14px;
+            font-weight: normal;
+        }
+    }
+    .leftArea .post-arrow{
+        left: auto;
+        right: -7px;
+        .timeline-divider{
+            left: -75px;
+        }
+    }
+    .rightArea .post-arrow{
+        left: -7px;
+        .timeline-divider{
+            left: 10px; 
+        }
+    }
+}
