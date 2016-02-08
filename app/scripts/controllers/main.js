@@ -9,18 +9,12 @@
  */
 angular.module('angularjsBlogApp')
 .controller('MainCtrl', function ($scope, $http) {
-    this.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma',
-        'SitePoint'
-    ];
     $scope.date = new Date();
-    $scope.url = 'test/posts.json';
-    $scope.content = [];
-
+    $scope.url = 'post/index';
+    $scope.status = false;
     $scope.fetchContent = function() {
-        $http.get($scope.url).then(function(result){
+        $http({ method: 'GET', url: $scope.url }).then(function(result){
+            $scope.status = true;
             var even = false;
             var oddPostList = [];
             var evenPostList = [];
@@ -32,9 +26,10 @@ angular.module('angularjsBlogApp')
                 }
                 even = !even;
             });
-            console.log(oddPostList);
             $scope.oddPostList = oddPostList;
             $scope.evenPostList = evenPostList;
+        }, function(response){
+            $scope.status = false;
         });
     };
 
@@ -42,7 +37,6 @@ angular.module('angularjsBlogApp')
 }).directive('post', function () {
     var linker = function ($scope, element, attrs) {
         element.addClass("post");
-        console.log($scope);
 //        if(typeof $scope.postInfo === "undefined"){
 //            $scope.postInfo ={
 //                image: {
