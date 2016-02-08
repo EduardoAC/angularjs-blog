@@ -34,9 +34,11 @@ module.exports = function(config) {
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
-      "app/scripts/**/*.js",
-      "test/mock/**/*.js",
-      "test/spec/**/*.js"
+      'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
+      "app/scripts/**/*.js", 
+//      "test/mock/**/*.js",
+      "test/spec/**/*.js",
+      {pattern: 'test/json/*.json', included: false}
     ],
 
     // list of files / patterns to exclude
