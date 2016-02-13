@@ -7,7 +7,7 @@ describe('Controller: MainCtrl', function () {
     // load the BootstrapUI module
     beforeEach(module('ui.bootstrap'));
 
-    var scope, $httpBackend, $controller, createController, jsonData;
+    var scope, $httpBackend, $controller, createController, jsonData; 
 
     // Initialize the controller and a mock scope
     beforeEach(inject(function (_$httpBackend_, _$controller_, $rootScope) {
@@ -16,8 +16,8 @@ describe('Controller: MainCtrl', function () {
         scope = $rootScope; 
         jasmine.getJSONFixtures().fixturesPath = 'base/test/json/';
         jsonData = window.getJSONFixture('posts.json'); 
-        $httpBackend.whenGET('post/index')
-            .respond(200,jsonData);
+        $httpBackend.whenGET('test/json/posts.json').respond(200,jsonData);
+//        $httpBackend.whenGET('post/index').respond(200,jsonData);
         createController = function(){  
             return $controller('MainCtrl', { $scope: $rootScope });
         };
@@ -29,7 +29,8 @@ describe('Controller: MainCtrl', function () {
     });
     
     it('should fetch blog data', function () {
-        $httpBackend.expectGET('post/index');
+//        $httpBackend.expectGET('post/index');
+        $httpBackend.expectGET('test/json/posts.json');
         createController();
         $httpBackend.flush(); 
     });
