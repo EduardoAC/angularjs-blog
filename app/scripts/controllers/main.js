@@ -18,7 +18,7 @@ angular.module('angularjsBlogApp')
         var even = false;
         var oddPostList = [];
         var evenPostList = [];
-        angular.forEach(result.data, function(val,ky){
+        angular.forEach(result.data, function(val, ky){
             if(even){
                 evenPostList.push(val);
             }else{
@@ -28,10 +28,14 @@ angular.module('angularjsBlogApp')
         });
         $scope.oddPostList = oddPostList;
         $scope.evenPostList = evenPostList;
-    }, function(response){
+    }, function(){
         $scope.status = false;
     });
 
+}).controller('PostCtrl', function (postResponse,$scope) {
+    $scope.post = postResponse.data;
+    $scope.authorBio = {};
+    console.log(postResponse);
 }).service("httpDataLoader", function($http) {
     this.load = function() {
       return $http({ method: 'GET', url: "test/json/posts.json"});
@@ -40,7 +44,7 @@ angular.module('angularjsBlogApp')
       return $http({ method: 'GET', url: "test/json/" + slug + ".json"});
     };
 }).directive('post', function () {
-    var linker = function ($scope, element, attrs) {
+    var linker = function ($scope, element) {
         element.addClass("post");
         $scope.postInfo = $scope.$parent.postInfo;
     };
@@ -53,7 +57,18 @@ angular.module('angularjsBlogApp')
         link: linker,
         templateUrl: 'templates/blog-post.html'
     };
-}).controller('PostCtrl', function (postResponse,$scope) {
-    $scope.post = postResponse.data;
-    console.log(postResponse);
+}).directive('authorBio', function(){
+    var linker = function ($scope, element) {
+        element.addClass("author-bio");
+        $scope.authorBio = $scope.$parent.authorBio;
+    };
+
+    return {
+        restrict: 'E',
+        scope: {
+            authorBio: '='
+        },
+        link: linker,
+        templateUrl: 'templates/author-bio.html'
+    };
 });

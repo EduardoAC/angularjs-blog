@@ -6,15 +6,15 @@
             <span>business</span>
         </div>
         <div class="meta-post-info">
-            <span><i class="glyphicon glyphicon-user"></i>{{post.author}}</span>
-            <span><i class="glyphicon glyphicon-calendar"></i>{{post.date}}</span>
-            <span><i class="glyphicon glyphicon-comment"></i>{{post.commentCount}}</span>
+            <p>{{post.author}}</p>
+            <p>{{post.date}}</p>
+            <p>{{post.commentCount}} comments</p>
         </div>
         <section class="content">
             {{post.content}}
         </section>
         <section class="post-extra-ouput">
-            <div class="author-bio"></div>
+            <author-bio></author-bio>
             <div class="tag-cloud"></div>
             <div class="share"></div>
         </section>
