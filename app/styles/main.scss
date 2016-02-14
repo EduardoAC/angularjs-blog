@@ -1,5 +1,5 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
-$grid-gutter-width: 0px;
+/*$grid-gutter-width: 18px;*/
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
@@ -58,7 +58,7 @@ body {
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
+  height: 50px;
 
     .navbar-inverse{
           background-image: -webkit-linear-gradient(top, #3c3c3c 0, #222 100%);
