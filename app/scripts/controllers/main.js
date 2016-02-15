@@ -34,7 +34,11 @@ angular.module('angularjsBlogApp')
 
 }).controller('PostCtrl', function (postResponse,$scope) {
     $scope.post = postResponse.data;
-    $scope.authorBio = {};
+    $scope.authorBio = {
+        name: "eduardo aparicio cardenes",
+        description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        imgUrl: "http://eduardo-aparicio-cardenes.website/images/eduardo-aparicio-cardenes-graduation.jpg"
+    };
     console.log(postResponse);
 }).service("httpDataLoader", function($http) {
     this.load = function() {
