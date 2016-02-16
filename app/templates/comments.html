@@ -1,0 +1,23 @@
+<a href="" ng-click="toggleModal()" class="btn btn-default btn-post-comment pull-right">Post a comment</a>
+<h3 class="comments-title">
+  <span class="bagde">{{comments.length}}</span>
+  Comments
+</h3>
+<ul class="media-list comment-detail-list">
+  <li class="media" ng-repeat="comment in comments">
+    <article>
+      <div class="pull-left comment-info">
+        <a href="#" class="author">{{ comment.author }}</a><br />
+        <time>{{ comment.datePublished | date:"MM/dd/yyyy" }}</time>
+      </div>
+      <div class="media-body">
+        <div class="comment-body">
+          <p>{{ comment.comment }}</p>
+        </div>
+      </div>
+    </article>
+  </li>
+</ul>
+<modal title="Post a comment" visible="showModal">
+    <comment-form></comment-form>
+</modal>

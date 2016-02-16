@@ -28,12 +28,7 @@ angular
       .when('/:slug', {
         templateUrl: 'views/post.html',
         controller: 'PostCtrl',
-        controllerAs: 'postCtrl',
-        resolve: {
-            postResponse: ["$route","httpDataLoader", function($route, httpDataLoader){
-                return httpDataLoader.getPost($route.current.params.slug);
-            }]
-        }
+        controllerAs: 'postCtrl'
       })
       .when('/about', {
         templateUrl: 'views/about.html',

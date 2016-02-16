@@ -1,4 +1,4 @@
-<div class="row post-page">
+<div ng-controller="PostCtrl" class="row post-page">
     <article class="post col-md-9">
         <h1>{{post.title}}</h1>
         <div class="post-category">
@@ -18,9 +18,7 @@
             <div class="tag-cloud"></div>
             <div class="share"></div>
         </section>
-        <section class="comments">
-
-        </section>
+        <comments></comments>
     </article>
     <aside class="col-md-3 right-sidebar" role="complementary">
 
